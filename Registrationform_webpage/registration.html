@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Registration Form
+
+    </title>
+
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #c8cfd4;
+
+    }
+
+
+    form {
+        background-color: #7c9396;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    form h1 {
+        margin-top: 0;
+
+
+    }
+
+    form label {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="password"],
+    form input[type="date"],
+    form input[type="checkbox"] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+
+    form input[type="checkbox"] {
+        display: inline-block;
+
+    }
+
+    form button[type="submit"] {
+        background-color: #343434;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    form button[type="submit"]:hover {
+        background-color: #363936;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    table th,
+    table td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    table th {
+        background-color: #272827;
+        color: white;
+    }
+
+    table tbody tr:nth-child(even) {
+        background-color: #7a8791;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <form id="registration-form">
+            <h1>Registration Form</h1>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="dob">Date of Birth (mm/dd/yyyy):</label>
+            <input type="text" id="dob" name="dob" required>
+
+            <label for="terms">I accept the terms and conditions:</label>
+            <input type="checkbox" id="terms" name="terms" required>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <table id="registration-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Date of Birth</th>
+                    <th>Accepted terms?</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        // Retrieve saved data from web storage
+        let savedData = JSON.parse(localStorage.getItem("registrationData")) || [];
+
+        // Display saved data in the table
+        let registrationTable = document.getElementById("registration-table");
+
+        function displayData() {
+            registrationTable.tBodies[0].innerHTML = "";
+
+            savedData.forEach(function (registration) {
+                let row = registrationTable.tBodies[0].insertRow();
+
+                let nameCell = row.insertCell();
+                nameCell.appendChild(document.createTextNode(registration.name));
+
+                let emailCell = row.insertCell();
+                emailCell.appendChild(document.createTextNode(registration.email));
+
+                let passwordCell = row.insertCell();
+                passwordCell.appendChild(document.createTextNode(registration.password));
+
+                let dobCell = row.insertCell();
+                dobCell.appendChild(document.createTextNode(registration.dob));
+
+                let termsCell = row.insertCell();
+                termsCell.appendChild(
+                    document.createTextNode(registration.terms ? "Yes" : "No")
+                );
+            });
+        }
+
+        displayData();
+
+        // Handle form submission
+        let registrationForm = document.getElementById("registration-form");
+
+        registrationForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let dob = document.getElementById("dob").value;
+            let terms = document.getElementById("terms").checked;
+
+            // Add additional validation to the date input field
+            let birthDate = new Date(dob);
+            let minDate = new Date();
+            minDate.setFullYear(minDate.getFullYear() - 55);
+            let maxDate = new Date();
+            maxDate.setFullYear(maxDate.getFullYear() - 18);
+
+            if (birthDate < minDate || birthDate > maxDate) {
+                alert("Date of birth must be between 18 and 55 years ago.");
+                return;
+            }
+
+            let registration = {
+                name: name,
+                email: email,
+                password: password,
+                dob: dob,
+                terms: terms,
+            };
+
+            savedData.push(registration);
+
+            localStorage.setItem("registrationData", JSON.stringify(savedData));
+
+            displayData();
+
+            registrationForm.reset();
+        });
+
+    </script>
+</body>
+
+</html>
