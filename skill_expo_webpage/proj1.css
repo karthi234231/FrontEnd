@@ -1,0 +1,237 @@
+html {
+    scroll-behavior: smooth;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px 90px;
+    background-color: rgb(241, 247, 249);
+    box-shadow: 0 5px 15px gray;
+    z-index: 70;
+    position: sticky;
+    top: 0;
+    left: 0;
+    margin-top: -5%;
+    margin-left: 0%;
+    margin-right: 0%;
+    border-radius: 15px;
+    height: 30px;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+    transition: 2s ease;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+    transition: 1.5s ease;
+
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: rgb(24, 70, 124);
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background-color: rgb(16, 17, 16);
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+#bd {
+    background-image: url(pm3.png);
+    height: 40vh;
+    width: 90.2%;
+    background-size: contain;
+    background-position: top 15% right 0;
+    color: rgb(9, 15, 15);
+    padding: 150px 90px;
+
+    flex-direction: column;
+    font-size: larger;
+    justify-content: center;
+
+
+}
+
+#bd h4 {
+    padding-bottom: 15px;
+
+}
+
+#bd h1 {
+    color: rgb(38, 209, 209);
+
+}
+
+#bd button {
+
+
+    border: 0;
+    height: 80px;
+    display: inline-block;
+    padding: 8px 50px;
+    background-size: cover;
+    align-content: center;
+
+}
+
+.sec-p1 {
+    padding: 40px 80px;
+
+}
+
+#courses .fe-box {
+    width: 250px;
+
+    text-align: center;
+    padding: 24px 15px;
+    box-shadow: 6px 6px 10px rgb(66, 64, 64);
+    border-radius: 20px;
+    margin: 8px 0;
+    border: 1px solid whitesmoke;
+    margin: 20px;
+    top: 0px;
+    position: relative;
+    color: aliceblue;
+    font-weight: 200;
+    font-size: medium;
+}
+
+#courses .fe-box:hover {
+
+    transition-duration: 0.25s;
+    top: -14px;
+}
+
+#courses {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 70px;
+    margin-right: 70px;
+    flex-wrap: wrap;
+}
+
+body {
+    background: linear-gradient(rgba(246, 245, 245, 0.5), rgba(249, 247, 247, 0.5)), url(img/p1bg1.jpg);
+    ;
+    background-size: 1500px;
+    background-color: transparent;
+    height: 700px;
+
+}
+
+#icon {
+    color: rgb(19, 17, 17);
+    size: 100px;
+}
+
+#icon:hover {
+    filter: brightness(55%);
+    size: 6px;
+}
+
+#cour-head {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 70px;
+    font-size: 40px;
+}
+
+#sec2 {
+    margin-top: 180px;
+    background: linear-gradient(rgba(151, 140, 140, 0.5), rgba(188, 59, 59, 0.5)), url(img/p1ye.jpg.jpg);
+    ;
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+    height: 1450px;
+}
+
+.heads {
+    margin-left: 200px;
+    margin-bottom: -20px;
+
+}
+
+hr {
+    margin-left: 180px;
+    margin-right: 1000px;
+    height: 4px;
+    background-color: rgb(183, 243, 243);
+}
+
+#cour-head-2 {
+    text-align: center;
+    color: brown;
+    font-size: 50px;
+
+}
+
+#courses-2 .box {
+
+    border: 1px solid rgb(238, 235, 235);
+    width: 300px;
+    text-align: center;
+    padding: 24px 15px;
+    border-radius: 6px;
+
+
+}
+
+#courses-2 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 150px;
+    margin-right: 70px;
+
+
+}
+
+#courses-2 .box:hover {
+
+    background-color: rgb(231, 230, 230);
+
+}
+
+.box img:hover {
+    transform: scale(1.15);
+    transition-duration: 1.5s;
+}
+
+#hr1 {
+    margin-left: 80px;
+    margin-right: 80px;
+    background-color: black;
+}
+
+h4 {}
+
+.mat {
+    font-size: 50px;
+}
