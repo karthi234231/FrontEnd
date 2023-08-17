@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'popins',sans-serif;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: radial-gradient(879px at 10.4% 22.3%, rgb(255, 235, 238) 0%, rgb(186, 190, 245) 93.6%);
+    
+}
+.form-box{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: transparent;
+    outline: .2em solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 19px;
+}
+h2{
+   font-size: 2em; 
+   color: rgb(16, 17, 17);
+   text-align: center;
+}
+.inputbox{
+   position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom:2px solid #fff;
+}
+.inputbox label{
+    position: absolute;
+    top: 36%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: rgb(2, 2, 2);
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+    margin-left: -3px;
+}
+input:focus ~ label,
+input:valid ~ label{
+    top: -1px;
+
+}
+.inputbox input{
+    width: 100%;
+    height: 45px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1em;
+    padding:25px 0 5px;
+}
+.inputbox ion-icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    top: 30px;
+}
+
+
+.a1{
+    font-size: .9em;
+    text-decoration: none;
+    margin-left:10px;
+    font-weight: 550;
+   
+   
+}
+.a1:hover{
+    text-decoration: underline;
+}
+button{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top:20px;
+    font-weight: 600
+    
+}
+.register{
+    font-size: .9em;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.register p a{
+    text-decoration: none;
+    font-weight: 600;
+}
+.register p a:hover{
+    text-decoration: underline;
+}
